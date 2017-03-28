@@ -23,15 +23,15 @@ namespace Pendulum.Controller
 		/// <summary>
 		/// <para>Distancia de la camara</para>
 		/// </summary>
-		private float distanciaLejana;							// Distancia de la camara
+		public float camDistancia = 5f;							// Distancia de la camara
 		/// <summary>
 		/// <para>Altura de la distancia de la camara</para>
 		/// </summary>
-		private float distanciaUp;								// Altura de la distancia de la camara
+		public float camAltura = 2f;							// Altura de la distancia de la camara
 		/// <summary>
 		/// <para>Smooth de la camara</para>
 		/// </summary>
-		private float smooth;									// Smooth de la camara
+		public float smooth = 3f;								// Smooth de la camara
 		/// <summary>
 		/// <para>Objetivo de la camara</para>
 		/// </summary>
@@ -39,7 +39,7 @@ namespace Pendulum.Controller
 		/// <summary>
 		/// <para>Posicion del objetivo</para>
 		/// </summary>
-		private Vector3 posicionTarget;                         // Posicion del objetivo
+		private Vector3 posicionCamara;							// Posicion del objetivo
 		#endregion
 
 		#region Init
@@ -50,6 +50,54 @@ namespace Pendulum.Controller
 		{
 			// Obtener el pivote de la camara
 			pivote = GameObject.FindWithTag("Player").transform;
+		}
+		#endregion
+
+		#region Actualizadores
+		/// <summary>
+		/// <para>Actualizacion.Cuando termina todo el calculo.</para>
+		/// </summary>
+		private void LateUpdate()// Actualizacion.Cuando termina todo el calculo
+		{
+			// Ajustar la posicion del objetivo
+			posicionCamara = pivote.position + pivote.up * camAltura - pivote.forward * camDistancia;
+
+			// Debug, muestra los rays para ver si todo esta correctamente
+			Rays();
+
+			// Crear la transicion de la actual posicion a la nueva con el retraso
+			this.transform.position = Vector3.Lerp(transform.position, posicionCamara, Time.deltaTime * smooth);
+
+			// Bloquear la camara
+			this.transform.LookAt(pivote);
+		}
+		#endregion
+
+		#region API
+		/// <summary>
+		/// <para>Obtener la posicion de la camara(Solo lectura).</para>
+		/// </summary>
+		/// <returns>Devuelve la posicion de la camara.</returns>
+		public Vector3 GetPosicionCamara()// Obtener la posicion de la camara(Solo lectura)
+		{
+			return posicionCamara;
+		}
+		#endregion
+
+		#region Ray
+		/// <summary>
+		/// <para>Muestra los rays mandados</para>
+		/// </summary>
+		private void Rays()// Muestra los rays mandados
+		{
+			// Ray del pivote de la camara
+			Debug.DrawRay(pivote.position, pivote.up * camAltura, Color.green);
+
+			// Ray desde la posicion del pivote hasta la posicion de la camara
+			Debug.DrawRay(pivote.position, -1f * pivote.forward * camDistancia, Color.green);
+
+			// Ray de la orientacion de la camara hasta el pivote
+			Debug.DrawLine(pivote.position, posicionCamara, Color.magenta);
 		}
 		#endregion
 	}
