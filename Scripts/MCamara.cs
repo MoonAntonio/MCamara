@@ -39,7 +39,18 @@ namespace Pendulum.Controller
 		/// <summary>
 		/// <para>Posicion del objetivo</para>
 		/// </summary>
-		private Vector3 posicionTarget;							// Posicion del objetivo
+		private Vector3 posicionTarget;                         // Posicion del objetivo
+		#endregion
+
+		#region Init
+		/// <summary>
+		/// <para>Iniciador de MCamara.</para>
+		/// </summary>
+		private void Start()// Iniciador de MCamara
+		{
+			// Obtener el pivote de la camara
+			pivote = GameObject.FindWithTag("Player").transform;
+		}
 		#endregion
 	}
 }
