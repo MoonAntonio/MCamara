@@ -20,7 +20,26 @@ namespace Pendulum.Controller
 	public class MCamara : MonoBehaviour 
 	{
 		#region Variables Privadas
-
+		/// <summary>
+		/// <para>Distancia de la camara</para>
+		/// </summary>
+		private float distanciaLejana;							// Distancia de la camara
+		/// <summary>
+		/// <para>Altura de la distancia de la camara</para>
+		/// </summary>
+		private float distanciaUp;								// Altura de la distancia de la camara
+		/// <summary>
+		/// <para>Smooth de la camara</para>
+		/// </summary>
+		private float smooth;									// Smooth de la camara
+		/// <summary>
+		/// <para>Objetivo de la camara</para>
+		/// </summary>
+		private Transform pivote;								// Objetivo de la camara
+		/// <summary>
+		/// <para>Posicion del objetivo</para>
+		/// </summary>
+		private Vector3 posicionTarget;							// Posicion del objetivo
 		#endregion
 	}
 }
