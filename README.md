@@ -5,6 +5,10 @@ Controlador de la camara para el proyecto de TFG
 
 > Assets/Alexandria/2. ControlCamara/MCamara*
 
+<p align="center">
+  <img src="https://github.com/MoonAntonio/MCamara/blob/master/Res/prevMCamara.gif?raw=true">
+</p>
+
 ## Requisitos
 
 + [NGUI](http://www.tasharen.com/?page_id=140) - (Utilizado en la raiz del proyecto.)

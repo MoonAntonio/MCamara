@@ -739,6 +739,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4148475060499202, guid: f2afabbe46b4530408adff01a1c2a9f1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2afabbe46b4530408adff01a1c2a9f1, type: 2}
   m_IsPrefabParent: 0
@@ -841,6 +845,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9ac089a4e0bfdd42a781527040c559f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camDistancia: 5
+  camAltura: 2
+  smooth: 3
 --- !u!1001 &2141731474
 Prefab:
   m_ObjectHideFlags: 0
