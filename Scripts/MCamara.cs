@@ -35,7 +35,7 @@ namespace Pendulum.Controller
 		/// <summary>
 		/// <para>Objetivo de la camara</para>
 		/// </summary>
-		private Transform pivote;								// Objetivo de la camara
+		public Transform pivote;								// Objetivo de la camara
 		/// <summary>
 		/// <para>Posicion del objetivo</para>
 		/// </summary>
@@ -49,7 +49,7 @@ namespace Pendulum.Controller
 		private void Start()// Iniciador de MCamara
 		{
 			// Obtener el pivote de la camara
-			pivote = GameObject.FindWithTag("Pivote").transform;
+			pivote = GameObject.FindWithTag("Player").transform.FindChild("PivoteCamara");
 		}
 		#endregion
 
