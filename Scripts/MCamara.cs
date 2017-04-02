@@ -35,7 +35,7 @@ namespace Pendulum.Controller
 		/// <summary>
 		/// <para>Objetivo de la camara</para>
 		/// </summary>
-		public Transform pivote;								// Objetivo de la camara
+		private Transform pivote;								// Objetivo de la camara
 		/// <summary>
 		/// <para>Posicion del objetivo</para>
 		/// </summary>
