@@ -49,7 +49,7 @@ namespace Pendulum.Controller
 		private void Start()// Iniciador de MCamara
 		{
 			// Obtener el pivote de la camara
-			pivote = GameObject.FindWithTag("Player").transform;
+			pivote = GameObject.FindWithTag("Pivote").transform;
 		}
 		#endregion
 
