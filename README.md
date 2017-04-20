@@ -1,4 +1,4 @@
-# MCamara
+# MCamara [Deprecated]
 Controlador de la camara para el proyecto de TFG
 
 ## Mapeado
